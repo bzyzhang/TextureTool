@@ -47,8 +47,8 @@ public class SearchWithTag : EditorWindow
                 foreach (string s in listResult)
                 {
                     GUILayout.BeginHorizontal();
-                    GUILayout.Label(resultCount+"    "+s,GUILayout.Width(position.width/3*2-10));
-                    if (GUILayout.Button("选择", GUILayout.Width(position.width / 3 * 2 + 10)))
+                    GUILayout.Label(resultCount+"    "+s,GUILayout.Width(position.width*0.8f));
+                    if (GUILayout.Button("选择", GUILayout.Width(position.width*0.15f)))
                     {
                         Selection.activeObject = AssetDatabase.LoadMainAssetAtPath(s);
                     }
@@ -78,7 +78,7 @@ public class SearchWithTag : EditorWindow
                 result.Add(importer.assetPath);
 
             ++index;
-            EditorUtility.DisplayProgressBar("查找中",System.Math.Round(index/(allCount*1f))+"/100%",index/allCount);
+            EditorUtility.DisplayProgressBar("查找中",(System.Math.Round((index/allCount),2)*100).ToString()+"%",index/allCount);
         }
 
         EditorUtility.ClearProgressBar();
