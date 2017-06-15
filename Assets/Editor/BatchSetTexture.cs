@@ -26,12 +26,14 @@ public class BatchSetTexture
                 if (importer.textureFormat == TextureImporterFormat.ETC2_RGB4)
                 {
                     importer.textureFormat = TextureImporterFormat.ASTC_RGB_8x8;
-                    AssetDatabase.ImportAsset(assetPath);
+                    //AssetDatabase.ImportAsset(assetPath);
+                    importer.SaveAndReimport();
                 }
                 else if (importer.textureFormat == TextureImporterFormat.ETC2_RGBA8)
                 {
                     importer.textureFormat = TextureImporterFormat.ASTC_RGBA_8x8;
-                    AssetDatabase.ImportAsset(assetPath);
+                    //AssetDatabase.ImportAsset(assetPath);
+                    importer.SaveAndReimport();
                 }
                 else
                 {
